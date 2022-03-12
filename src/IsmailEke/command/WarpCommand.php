@@ -12,20 +12,19 @@ use pocketmine\utils\Config;
 use pocketmine\Server;
 
 class WarpCommand extends Command {
-	
-	public function __construct () {
-		parent::__construct("warp", "Warp Command.", "/warp");
-	}
-	
-	/**
-	 * @param string[] $args
-	 *
-	 * @return mixed
-	 * @throws CommandException
-	 */
-	
-	public function execute (CommandSender $sender, string $commandLabel, array $args) {
-		if (count($args) < 1) {
+    
+    public function __construct () {
+        parent::__construct("warp", "Warp Command.", "/warp");
+    }
+    
+    /**
+     * @param string[] $args
+     * 
+     * @return mixed
+     * @throws CommandException
+     */
+    public function execute (CommandSender $sender, string $commandLabel, array $args) {
+        if (count($args) < 1) {
             $sender->sendForm(new WarpForm());
         } elseif (count($args) >= 2) {
             if (Server::getInstance()->isOp($sender->getName())) {
@@ -54,5 +53,6 @@ class WarpCommand extends Command {
                 }
             }
         }
-	}
+    }
 }
+?>
