@@ -4,10 +4,8 @@
 *
 * Warp Plugin
 *
-* Author: IsmailEke (İsmail Eke)
-* GitHub: IsmailEke
 * YouTube: İsmail Eke
-* Discord: bulgasal#2359
+* Discord: yujirohanma#2359
 *
 */
 
@@ -19,7 +17,7 @@ use pocketmine\utils\Config;
 
 class Warp extends PluginBase {
     
-    /** @var ?Config */
+    /** @var Config|null */
     public static ?Config $config;
     
     /**
@@ -36,6 +34,7 @@ class Warp extends PluginBase {
      * @param array $whereToSearch
      * 
      * @return string|null
+     * @link https://github.com/pmmp/PocketMine-MP/blob/cd021f49cdd2cd0fd1dfbad58c24fae6c3a4e5b3/src/Server.php#L618
      */
     public static function searchData (string $searchWord, array $whereToSearch) : ?string {
         $found = null;
